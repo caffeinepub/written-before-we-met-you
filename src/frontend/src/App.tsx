@@ -5,11 +5,11 @@ type Phase = "landing" | "opening" | "letter";
 const letterParagraphs = [
   {
     id: "p1",
-    text: "You probably don't realize how much love you are going to bring in the world. I'm sure that this child will feel your warmth and kindness on a day-to-day basis. You're going to be an incredible mom in all the subtle, unseen and quiet ways.",
+    text: "You probably don't realize how much love you are going to bring in this world. I'm sure that this child will feel your warmth and kindness on a day-to-day basis. You're going to be an incredible mom in all the subtle, unseen and quiet ways.",
   },
   {
     id: "p2",
-    text: "To this little person who is on their way-- you don't have the slightest idea what you're getting yourself into. And before you ever got here, your family was cheering you on. That's a pretty great start.",
+    text: "To this little person who is on their way-- you don't have the slightest idea what you're getting yourself into. And before you even got here, your family was cheering you on. That's a pretty great start.",
   },
   {
     id: "p3",
