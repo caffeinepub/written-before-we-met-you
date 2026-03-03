@@ -5,35 +5,27 @@ type Phase = "landing" | "opening" | "letter";
 const letterParagraphs = [
   {
     id: "p1",
-    text: "Tina \u2665",
+    text: "You probably don't realize how much love you are going to bring in the world. I'm sure that this child will feel your warmth and kindness on a day-to-day basis. You're going to be an incredible mom in all the subtle, unseen and quiet ways.",
   },
   {
     id: "p2",
-    text: "You probably don't realize how much love you are going to bring into the world. I'm sure that this child will feel your warmth and kindness on a daily basis. You're going to be an incredible mom in all the subtle, unseen, and quiet ways.",
+    text: "To this little person who is on their way-- you don't have the slightest idea what you're getting yourself into. And before you ever got here, your family was cheering you on. That's a pretty great start.",
   },
   {
     id: "p3",
-    text: "To this little person who is on their way — you don't have the slightest idea what you're getting yourself into. And before you even got here, your family was already cheering you on. That's a pretty great start.",
+    text: "This letter was written before the world had a chance to meet you, before we heard you cry, before we held you, before we knew the color of your eyes, or what would make you laugh. It was written in the weeks when you were still a held breath, a quiet hope, a presence which filled every room without having entered one. You are already the most loved person that we know.",
   },
   {
     id: "p4",
-    text: "This letter was written before the world got a chance to meet you — before we heard you cry, before we held you, before we knew the color of your eyes or what would make you laugh. It was written in the weeks when you were still a held breath, a quiet hope, a presence that filled every room without having entered one. You are, already, the most loved person we know.",
+    text: "Little one I am so excited to meet you. And Tina, I am excited to see you grow to be someone you don't even know yet.",
   },
   {
     id: "p5",
-    text: "Little one, I am so excited to meet you. And Tina, I'm excited to see you grow to be someone you don't even know yet.",
+    text: `I've known Ayush long enough to know how much he cares, even if he doesn't always express it out loud. It has been truly unique to see him embark on this new chapter with you. Together, the two of you are already a stable, safe place and that is a feeling "children" carry with them throughout their lives.`,
   },
   {
     id: "p6",
-    text: "I've known Ayush long enough to know how much he cares, even when he doesn't always express it out loud. It has been truly special to see him step into this new chapter with you. Together, the two of you are already a stable, safe place — and that is a feeling children carry with them throughout their lives.",
-  },
-  {
-    id: "p7",
-    text: "Just know that I'm always here for you. Enjoy these happy and overwhelming moments, which you'll want to pause and remember later in life. This little one is already lucky — and so are all of us who get to be part of this journey with you both.",
-  },
-  {
-    id: "p8",
-    text: "So much love to you and the little one. \u2665",
+    text: "Just know that I'm always here for you. Enjoy these happy and overwhelming moments, which you'll want to pause and remember later in life. This little one is already lucky and so are all of us who get to be a part of this journey with you both.",
   },
 ];
 
@@ -85,10 +77,9 @@ export default function App() {
           <div className={`landing-content ${unsealing ? "dissolving" : ""}`}>
             {/* Title */}
             <div className="landing-title-wrap">
-              <h1 className="landing-title">Written Before We Met You</h1>
-              <span className="landing-heart" aria-hidden="true">
-                🤍
-              </span>
+              <h1 className="landing-title">
+                Written Before We Met You, Little One&nbsp;🤍
+              </h1>
             </div>
 
             {/* Dedication */}
@@ -153,22 +144,42 @@ export default function App() {
             </div>
 
             <header className="letter-header">
-              <h1 className="letter-title">Written Before We Met You</h1>
+              <h1 className="letter-title">
+                Written Before We Met You, Little One
+              </h1>
               <p className="letter-subtitle">
                 A letter sealed before you arrived
               </p>
             </header>
 
             <div className="letter-body">
+              {/* Salutation */}
+              <p
+                className="letter-salutation"
+                style={{ animationDelay: "0.2s" }}
+              >
+                Tina ❤️
+              </p>
+
               {letterParagraphs.map((para, i) => (
                 <p
                   key={para.id}
-                  className={`letter-paragraph${para.id === "p1" ? " letter-salutation" : ""}`}
+                  className="letter-paragraph"
                   style={{ animationDelay: `${0.4 + i * 0.35}s` }}
                 >
                   {para.text}
                 </p>
               ))}
+
+              {/* Closing line */}
+              <p
+                className="letter-closing-love"
+                style={{
+                  animationDelay: `${0.4 + letterParagraphs.length * 0.35}s`,
+                }}
+              >
+                So much love to you three ❤️
+              </p>
             </div>
 
             {/* Divider before signature */}
@@ -178,23 +189,16 @@ export default function App() {
               <span className="divider-line" />
             </div>
 
-            <footer className="letter-footer">
-              <p className="letter-closing">So much love, always —</p>
-              <p className="letter-signature">Always Family</p>
+            {/* Signature */}
+            <footer
+              className="letter-footer"
+              style={{
+                animationDelay: `${0.4 + (letterParagraphs.length + 1) * 0.35 + 0.3}s`,
+              }}
+            >
+              <p className="letter-signature">-- Always Family</p>
             </footer>
           </article>
-
-          {/* Caffeine attribution */}
-          <div className="letter-attribution">
-            &copy; {new Date().getFullYear()}.{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Built with love using caffeine.ai
-            </a>
-          </div>
         </div>
       )}
     </div>

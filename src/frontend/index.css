@@ -201,12 +201,6 @@
     0 0 80px rgba(160, 100, 20, 0.2);
 }
 
-.landing-heart {
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-top: 0.25rem;
-  flex-shrink: 0;
-}
 
 /* Dedication text */
 .landing-dedication {
@@ -436,6 +430,23 @@
   text-align: left !important;
   margin-bottom: 1.8em !important;
   letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: para-entrance 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Closing love line */
+.letter-closing-love {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.88;
+  color: var(--ink-light);
+  margin: 1.2em 0 0;
+  letter-spacing: 0.008em;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: para-entrance 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* Letter scroll container */
@@ -625,6 +636,8 @@
     animation: none;
   }
   .letter-paragraph,
+  .letter-salutation,
+  .letter-closing-love,
   .letter-footer,
   .letter-attribution {
     animation: none;
